@@ -1,3 +1,8 @@
 body {
-	background-image: url("11017-blue-wallpaper-design.png");
+	background-image: url("../images/background_img.jpg");
+	text-align: center;
+}
+
+#image1{
+	background-image: url("../images/blue.png");
 }
