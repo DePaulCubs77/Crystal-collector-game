@@ -8,9 +8,45 @@ var loses =0;
 var userTotal =0;
 var userGuess =0;
 var computerGuess =0;
+var numbers =[];
 
-$( document ).ready(function)() {
-	var numbers = [19-120];
 
-	console.log(this);
+// reset number to zero
+counter = 0;
+
+//reset numbers array
+numbers =[];
+
+// go through the array to generate random number
+for (var i=0, t=4; i<t; i++) {
+	numbers.push(Math.floor(Math.random() * 12))
 }
+
+//generate the cyrstal images
+ for (var i=0; i< numbers.length; i++){
+        var imageCrystal = $('.container');
+        blue.attr('data-num', numbers[i]);
+        green.attr('alt', 'crystals');
+        red.addClass('crystalImage');
+        $('#crystals').html(imageCrystal);
+
+// new number computer generates
+computerGuess = Math.floor((Math.random() * 100) + 20);
+
+$(document).ready(function()) {
+	newgame();
+
+		// get crystal image 
+      $(document).on('click', '.crystalImage', function(){
+  		userGuess = userGuess + parseInt($(this).data('num'));
+        $('#number').html(userGuess);
+		} 
+			else if ( userGuess > computerGuess){
+				$('#loses').html(Loses);
+       	}
+
+       		$('.btn').on('click', function(event) {
+        // rerun the new game function on click of the .btn
+        newGame();
+			});
+		});
